@@ -1,8 +1,7 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# emilytalksparsha.com
+Website for emilytalksparsha.com. Built in [GatsbyJS](https://www.gatsbyjs.org/).
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+Can be used as a Gatsby starter:
+`gatsby new gatsby-blog https://github.com/emilyaviva/emilytalksparsha.com`
 
-## Running in development
-`gatsby develop`
+More to come.

@@ -11,9 +11,14 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
+    let citation
+    if (post.frontmatter.book) {
+      citation = <section className="citation"
+    }
+
     return (
       <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet title={`${siteTitle} | ${post.frontmatter.title}`} />
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
@@ -25,6 +30,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
+        {citation}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{

@@ -12,8 +12,11 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     let citation
+    console.log(post.frontmatter)
     if (post.frontmatter.book) {
-      citation = <section className="citation"
+      citation = <section className="citation" style={{ display: 'block' }}>
+        <a href={post.frontmatter.sefaria_link}>{post.frontmatter.book} {post.frontmatter.verse_start}–{post.frontmatter.verse_end}</a>
+      </section>
     }
 
     return (
@@ -58,7 +61,11 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "D MMMM YYYY")
+        book
+        verse_start
+        verse_end
+        sefaria_link
       }
     }
   }

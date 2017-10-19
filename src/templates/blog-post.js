@@ -12,17 +12,23 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     let citation
-    console.log(post.frontmatter)
     if (post.frontmatter.book) {
       citation = <section className="citation" style={{ display: 'block' }}>
         <a href={post.frontmatter.sefaria_link}>{post.frontmatter.book} {post.frontmatter.verse_start}–{post.frontmatter.verse_end}</a>
       </section>
     }
 
+    let postTitle
+    if (post.frontmatter.parsha) {
+      postTitle = <h1>{post.frontmatter.parsha}: {post.frontmatter.title}</h1>
+    } else {
+      postTitle = <h1>{post.frontmatter.title}</h1>
+    }
+
     return (
       <div>
-        <Helmet title={`${siteTitle} | ${post.frontmatter.title}`} />
-        <h1>{post.frontmatter.title}</h1>
+        <Helmet title={`${siteTitle} | ${post.frontmatter.parsha}: ${post.frontmatter.title}`} />
+        {postTitle}
         <p
           style={{
             ...scale(-1 / 5),
@@ -63,6 +69,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "D MMMM YYYY")
         book
+        parsha
         verse_start
         verse_end
         sefaria_link

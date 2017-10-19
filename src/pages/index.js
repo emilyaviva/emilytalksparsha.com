@@ -17,7 +17,10 @@ class BlogIndex extends React.Component {
         <Bio />
         {posts.map(post => {
           if (post.node.path !== '/404/') {
-            const title = get(post, 'node.frontmatter.title') || post.node.path
+            let title = get(post, 'node.frontmatter.title') || post.node.path
+            if (post.node.frontmatter.parsha) {
+              title = `${post.node.frontmatter.parsha}: ${title}`
+            }
             return (
               <div key={post.node.frontmatter.path}>
                 <h3
@@ -29,7 +32,7 @@ class BlogIndex extends React.Component {
                     style={{ boxShadow: 'none' }}
                     to={post.node.frontmatter.path}
                   >
-                    {post.node.frontmatter.title}
+                    {title}
                   </Link>
                 </h3>
                 <small>{post.node.frontmatter.date}</small>
@@ -66,6 +69,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            parsha
           }
         }
       }

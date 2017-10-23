@@ -1,6 +1,6 @@
 ---
 title: Welcome to Emily Talks Parsha
-date: "2017-10-15T00:00:00Z"
+date: "2017-10-14T00:00:00Z"
 path: "/welcome-to-emily-talks-parsha/"
 ---
 

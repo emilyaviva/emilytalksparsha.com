@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Container } from 'react-responsive-grid'
+import FontAwesome from 'react-fontawesome'
 
 import { rhythm, scale } from '../utils/typography'
 
@@ -44,6 +45,10 @@ class Template extends React.Component {
             marginBottom: rhythm(-1),
           }}
         >
+          <FontAwesome
+            name="angle-double-left"
+            style={{ marginRight: '6px' }}
+          />
           <Link
             style={{
               boxShadow: 'none',

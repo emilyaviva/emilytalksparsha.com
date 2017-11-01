@@ -34,8 +34,7 @@
     "react-fontawesome": "^1.6.1",
     "react-responsive-grid": "^0.3.3",
     "typeface-lato": "^0.0.40",
-    "typeface-noticia-text": "^0.0.40",
-    "typography-theme-wordpress-2016": "^0.15.1"
+    "typeface-noticia-text": "^0.0.40"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",

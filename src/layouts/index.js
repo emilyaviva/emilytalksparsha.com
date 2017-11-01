@@ -45,10 +45,6 @@ class Template extends React.Component {
             marginBottom: rhythm(-1),
           }}
         >
-          <FontAwesome
-            name="angle-double-left"
-            style={{ marginRight: '6px' }}
-          />
           <Link
             style={{
               boxShadow: 'none',
@@ -57,7 +53,11 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Emily Talks Parsha
+            <FontAwesome
+              name="angle-double-left"
+              style={{ marginRight: '6px' }}
+            />
+            <span>Emily Talks Parsha</span>
           </Link>
         </h3>
       )
